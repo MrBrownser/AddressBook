@@ -1,14 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Addressbook</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ruby on Rails Address Book | IH 4th Week exercises</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
+	<header class="col-sm-12 header--main text-center container">
+		<h1> RoR Address Book <small>by MrBrown<br></small></h1>
+		<div class="col-sm-6 text-center">
+		    <button type="button" class="btn btn-success">+ New Contact</button>
+		</div>
+		<div class="col-sm-6 text-center">
+			<div class="form-group header__search">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search for a contact, phone or email">
+					<span class="input-group-btn">
+					<button class="btn btn-success" type="button">Search!</button>
+					</span>
+				</div>
+			</div>
+		</div>
+    </header>
 
-<%= yield %>
+    <div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 content--container">
+  
+				<%= yield %>
 
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<footer class="col-sm-12 footer--main">
+		      <p class="footer__text text-center">Copyleft Mr. Brown @ Ironhack bootcamp 2015 - All rights are for you</p>
+		</footer>
+	</div>
 </body>
 </html>
