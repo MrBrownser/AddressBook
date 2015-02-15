@@ -7,13 +7,15 @@
 <% if ((!@phones.empty?) || (!@emails.empty?)) %>
 <div class="row">
 	<div class="col-sm-6">
+		<p class="text-center"><img src="/assets/contacts/phone-icon.png" alt="Phone icon" class="contact-icons"></p>
 		<ul class="list-group text-center">
 			<% @phones.each do |phone| %>
 			<li class="list-group-item content--rows"><%= phone.phone %></li>
 			<% end %>
 		</ul>
 	</div>
-	<div class="col-sm-6">+
+	<div class="col-sm-6">
+		<p class="text-center"><img src="/assets/contacts/email-icon.png" alt="Phone icon" class="contact-icons"></p>
 		<ul class="list-group text-center">
 			<% @emails.each do |email| %>
 			<li class="list-group-item content--rows"><%= email.email %></li>
@@ -22,3 +24,11 @@
 	</div>
 </div>
 <% end %>
+<div class="row">
+	<div class="col-sm-3 col-md-offset-5">
+		<p>
+			<span class="btn btn-default"><%= link_to("Back", contacts_path) %></span>
+			<span class="btn btn-default"><%= link_to("Edit", edit_contact_path(@contact)) %></span>
+		</p>
+	</div>
+</div>
