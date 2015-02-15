@@ -1,2 +1,24 @@
-<h1> Name: <%= @contact.name %> </h1>
-<h2> Address: <%= @contact.address %> </h2>
+<div class="row">
+	<ul class="list-group">
+		<li class="list-group-item content--rows"><strong><%= @contact.name %></strong></li>
+		<li class="list-group-item content--rows"><%= @contact.address %></li>
+	</ul>
+</div>
+<% if ((!@phones.empty?) || (!@emails.empty?)) %>
+<div class="row">
+	<div class="col-sm-6">
+		<ul class="list-group text-center">
+			<% @phones.each do |phone| %>
+			<li class="list-group-item content--rows"><%= phone.phone %></li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="col-sm-6">+
+		<ul class="list-group text-center">
+			<% @emails.each do |email| %>
+			<li class="list-group-item content--rows"><%= email.email %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+<% end %>

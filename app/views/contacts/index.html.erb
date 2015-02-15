@@ -1,10 +1,13 @@
 <% if !@contacts.empty? %>
 	<h1 class="content__title text-center">Full list of contacts</h1>
-	<ul class="list-group content__list text-center">
+	<div class="list-group content__list text-center">
 		<% @contacts.each do |contact| %>
-		<li class="list-group-item"><%= contact.name %></li>
+		<span class="list-group-item">
+			<%= link_to(contact.name, contact_path(contact)) %>
+			<!-- Add through javascript the "hover" property to all the button, not just the text -->
+		</span>
 		<% end %>
-	</ul>
+	</div>
 <% else %>
-<h2 class="content__title text-center"> The address book is empty! run rake db:reset to get some examples! </h2>
+<h2 class="content__title text-center"> The address book is empty! run rake db:reset to get some examples!</h2>
 <% end %>
